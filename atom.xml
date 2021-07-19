@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://luchaoqi.github.io/"/>
-  <updated>2021-07-18T19:50:56.116Z</updated>
+  <updated>2021-07-19T00:50:38.584Z</updated>
   <id>https://luchaoqi.github.io/</id>
   
   <author>
@@ -21,7 +21,9 @@
     <link href="https://luchaoqi.github.io/blog/Master-Theorem/"/>
     <id>https://luchaoqi.github.io/blog/Master-Theorem/</id>
     <published>2021-07-18T19:36:50.000Z</published>
-    <updated>2021-07-18T19:50:56.116Z</updated>
+    <updated>2021-07-19T00:50:38.584Z</updated>
+    
+    <content type="html"><![CDATA[<p>$ T(n)=a T\left(\left\lceil\frac{n}{b}\right\rceil\right)+O\left(n^{d}\right)$</p><p>at level $0: O(n)  = O(n^d)$</p><p>at level $1: O(n) = aO\left(\frac{n}{b}\right)^{d}=O\left(n^{d}\right) \frac{a}{b^{d}}$</p><p>at level $i: O(n)= a^{i} O\left(\frac{n}{b^{i}}\right)^{d}=O\left(n^{d}\right)\left(\frac{a}{b^{d}}\right)^{i} $</p><p>at level $a^{log_bn}: O(n) = O\left(n^{\log _{b} a}\right) $</p><p>Note of log property</p>$$\begin{align}a^{\log _{b}n}&=a^{\log _{a}^{n}\cdot \log _{b}^{n}/\log _{a}^{n}} \tag{1} \\\log _{b}^{n}/\log _{a}^{n}&=\log _{b}^{a} \tag{2} \\a^{\log _{b}n} &= n^{\log _{b}a} \tag{3}\end{align}$$<p>Final time complexity: $ \sum_{i=0}^{\log _{b} n} O\left(n^{d}\right)\left(\frac{a}{b^{d}}\right)^{i} $</p><p>Basically we need to consider the term $\frac{a}{b^d}$ for the geometric sequence.</p><p>Case 1: $ \frac{a}{b^{d}}&lt;1\left(d&gt;\log _{b} a\right) $</p>$ \begin{aligned} & \sum_{i=0}^{\log _{b} n} O\left(n^{d}\right)\left(\frac{a}{b^{d}}\right)^{i} \\=& O\left(n^{d}\right) \end{aligned} $<p>Case 2: $ \frac{a}{b^{d}}=1\left(d=\log _{b} a\right) $</p>$ \begin{aligned} & \sum_{i=0}^{\log _{b} n} O\left(n^{d}\right)\left(\frac{a}{b^{d}}\right)^{i} \\=& \sum_{i=0}^{\log _{b} n} O\left(n^{d}\right) \\=&\left(1+\log _{b} n\right) O\left(n^{d}\right) \\=& O\left(n^{d} \log n\right) \end{aligned} $<p>Case 3: $ \frac{a}{b^{d}}&gt;1\left(d&lt;\log _{b} a\right) $</p>$ \begin{aligned} & \sum_{i=0}^{\log _{0} n} O\left(n^{d}\right)\left(\frac{a}{b^{d}}\right)^{i} \\=& O\left(O\left(n^{d}\right)\left(\frac{a}{b^{d}}\right)^{\log _{b} n}\right) \\=& O\left(O\left(n^{d}\right) \frac{a^{\log _{b} n}}{b^{d} \log _{b} n}\right) \\=& O\left(O\left(n^{d}\right) \frac{n^{\log _{b} a}}{n^{d}}\right) \\=& O\left(n^{\log _{b} a}\right) \end{aligned} $<p><a href="https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)#Application_to_common_algorithms">https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)#Application_to_common_algorithms</a></p><table><thead><tr><th>Algorithm</th><th>Recurrence relationship</th><th>Run time</th></tr></thead><tbody><tr><td>Binary search</td><td>$T(n)=T\left({\frac {n}{2}}\right)+O(1)$</td><td>$O(\log n)$</td></tr><tr><td>Binary tree traversal</td><td>$T(n)=2T\left({\frac {n}{2}}\right)+O(1)$</td><td>$O(n)$</td></tr><tr><td>Optimal sorted matrix search</td><td>$T(n)=2T\left({\frac {n}{2}}\right)+O(\log n)$</td><td>$O(n)$</td></tr><tr><td>Merge sort</td><td>$T(n)=2T\left({\frac {n}{2}}\right)+O(n)$</td><td>$O(n\log n)$</td></tr></tbody></table><p>Resources:</p><p><a href="https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)">https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)</a></p><p><a href="https://www.coursera.org/lecture/algorithmic-toolbox/proof-of-the-master-theorem-7KR1r">https://www.coursera.org/lecture/algorithmic-toolbox/proof-of-the-master-theorem-7KR1r</a></p>]]></content>
     
     <summary type="html">
     
